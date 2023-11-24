@@ -3,7 +3,7 @@ extends "res://main.gd"
 onready var rainbow_crate = load("res://mods-unpacked/Pasha-RainbowCrate/rainbow_crate_data.tres")
 
 func spawn_consumables(unit:Unit) -> void:
-	var luck = (Utils.get_stat("stat_luck") / 100.0) * 1_000_000
+	var luck = (Utils.get_stat("stat_luck") / 100.0) / 2
 	var drop_chance = min(1.0, unit.stats.base_drop_chance * (1 + luck))
 	
 	if RunData.current_wave > RunData.nb_of_waves:

@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://resources/fonts/actual/base/font_menus.tres" type="DynamicFont" id=1]
+[ext_resource path="res://mods-unpacked/Pasha-RainbowCrate/rainbow_crate_container.gd" type="Script" id=2]
+[ext_resource path="res://resources/fonts/actual/base/font_big_title.tres" type="DynamicFont" id=5]
+
+[node name="RainbowCrateContainer" type="VBoxContainer"]
+margin_right = 1126.0
+margin_bottom = 1000.0
+script = ExtResource( 2 )
+
+[node name="TopHorizontalWhiteSpace" type="HBoxContainer" parent="."]
+margin_right = 1126.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 0, 300 )
+
+[node name="Container" type="HBoxContainer" parent="."]
+margin_top = 304.0
+margin_right = 1126.0
+margin_bottom = 1013.0
+rect_min_size = Vector2( 0, 200 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container"]
+margin_right = 100.0
+margin_bottom = 709.0
+rect_min_size = Vector2( 100, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container"]
+margin_left = 104.0
+margin_right = 904.0
+margin_bottom = 709.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/VBoxContainer"]
+margin_right = 800.0
+alignment = 1
+
+[node name="TitleCanvas" type="CanvasLayer" parent="Container/VBoxContainer/HBoxContainer"]
+layer = 50
+visible = false
+
+[node name="TitleBar" type="Label" parent="Container/VBoxContainer/HBoxContainer/TitleCanvas"]
+margin_left = 322.0
+margin_top = 195.0
+margin_right = 802.0
+margin_bottom = 295.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 5 )
+text = "Select any Item!"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/VBoxContainer/HBoxContainer/TitleCanvas"]
+margin_left = 335.0
+margin_top = 304.0
+margin_right = 368.0
+margin_bottom = 404.0
+rect_min_size = Vector2( 33, 0 )
+
+[node name="SearchText" type="TextEdit" parent="Container/VBoxContainer/HBoxContainer/TitleCanvas"]
+margin_left = 850.0
+margin_top = 197.0
+margin_right = 1150.0
+margin_bottom = 297.0
+rect_min_size = Vector2( 300, 100 )
+focus_mode = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Search Name"
+override_selected_font_color = true
+minimap_width = 200
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Container/VBoxContainer"]
+margin_top = 4.0
+margin_right = 800.0
+margin_bottom = 709.0
+rect_min_size = Vector2( 800, 705 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/VBoxContainer/ScrollContainer"]
+margin_bottom = 705.0
+
+[node name="ItemContainer" type="GridContainer" parent="Container/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_bottom = 705.0
+rect_min_size = Vector2( 0, 705 )
+size_flags_horizontal = 2
+columns = 3
+
+[connection signal="text_changed" from="Container/VBoxContainer/HBoxContainer/TitleCanvas/SearchText" to="." method="_on_search_text_changed"]
