@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://mods-unpacked/Pasha-RainbowCrate/rainbow_crate_item.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/Pasha-RainbowCrate/rainbow_crate_ui/rainbow_crate_item.gd" type="Script" id=1]
 [ext_resource path="res://ui/menus/global/my_menu_button.gd" type="Script" id=3]
 [ext_resource path="res://ui/menus/shop/item_description.tscn" type="PackedScene" id=4]
 

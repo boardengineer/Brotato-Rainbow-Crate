@@ -1,8 +1,9 @@
 extends "res://ui/menus/upgrades/item_box_ui.gd"
 
 onready var rainbow_crate_resource = load("res://mods-unpacked/Pasha-RainbowCrate/rainbow_crate_data.tres")
-onready var rainbow_crate_ui_scene = load("res://mods-unpacked/Pasha-RainbowCrate/rainbow_crate_container.tscn")
-onready var rainbow_crate_item_ui = load("res://mods-unpacked/Pasha-RainbowCrate/rainbow_crate_item.tscn")
+
+onready var rainbow_crate_ui_scene = load("res://mods-unpacked/Pasha-RainbowCrate/rainbow_crate_ui/rainbow_crate_container.tscn")
+onready var rainbow_crate_item_ui = load("res://mods-unpacked/Pasha-RainbowCrate/rainbow_crate_ui/rainbow_crate_item.tscn")
 
 onready var margin_container = $MarginContainer
 onready var item_ui_container = $MarginContainer/HBoxContainer

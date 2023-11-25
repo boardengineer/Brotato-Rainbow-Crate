@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://resources/fonts/actual/base/font_menus.tres" type="DynamicFont" id=1]
-[ext_resource path="res://mods-unpacked/Pasha-RainbowCrate/rainbow_crate_container.gd" type="Script" id=2]
+[ext_resource path="res://mods-unpacked/Pasha-RainbowCrate/rainbow_crate_ui/rainbow_crate_container.gd" type="Script" id=2]
 [ext_resource path="res://resources/fonts/actual/base/font_big_title.tres" type="DynamicFont" id=5]
 
 [node name="RainbowCrateContainer" type="VBoxContainer"]
