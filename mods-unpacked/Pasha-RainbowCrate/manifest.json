@@ -11,7 +11,25 @@
 			"authors": ["Pasha"],
 			"compatible_mod_loader_version": ["6.0.0"],
 			"compatible_game_version": ["0.8.0.3"],
-			"config_defaults": {
+			"config_schema": {
+				"title": "Rainbow Crate Settings",
+				"description": "Config for Rainbow Crate",
+				"type" : "object",
+				"properties" : {
+                    "PASHA_RAINBOW_CRATES_ENABLED" : {
+						"type": "boolean",
+						"default": true,
+						"tooltip": "PASHA_RAINBOW_CRATES_ENABLED_TOOLTIP"
+					},
+					"PASHA_RAINBOW_CRATE_DROP_CHANCE" : {
+                        "type": "number",
+						"minimum": 0.1,
+						"maximum": 5.0,
+						"default": 0.2,
+						"format": "%.2f X",
+						"tooltip": "PASHA_RAINBOW_CRATE_DROP_CHANCE_TOOLTIP"
+					}
+				},
 			}
 		}
 	}
