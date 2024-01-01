@@ -16,10 +16,15 @@
 				"description": "Config for Rainbow Crate",
 				"type" : "object",
 				"properties" : {
-                    "PASHA_RAINBOW_CRATES_ENABLED" : {
+                    "PASHA_RAINBOW_CRATE_RAINBOW_CRATES_ENABLED" : {
 						"type": "boolean",
 						"default": true,
-						"tooltip": "PASHA_RAINBOW_CRATES_ENABLED_TOOLTIP"
+						"tooltip": "PASHA_RAINBOW_CRATE_RAINBOW_CRATES_ENABLED_TOOLTIP"
+					},
+                    "PASHA_RAINBOW_CRATE_UNLOCKED_ITEMS_ONLY" : {
+						"type": "boolean",
+						"default": false,
+						"tooltip": "PASHA_RAINBOW_CRATE_UNLOCKED_ITEMS_ONLY_TOOLTIP"
 					},
 					"PASHA_RAINBOW_CRATE_DROP_CHANCE" : {
                         "type": "number",

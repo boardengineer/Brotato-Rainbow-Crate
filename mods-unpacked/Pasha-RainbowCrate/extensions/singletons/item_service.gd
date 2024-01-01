@@ -4,7 +4,6 @@ onready var rainbow_crate_resource = load("res://mods-unpacked/Pasha-RainbowCrat
 
 func process_item_box(wave:int, consumable_data:ConsumableData, fixed_tier:int = - 1)->ItemParentData:
 	if consumable_data.my_id == rainbow_crate_resource.my_id:
-		print_debug("rainbow crate picked up")
 		var result = .process_item_box(wave, consumable_data, fixed_tier).duplicate()
 		result.my_id = consumable_data.my_id
 		return result

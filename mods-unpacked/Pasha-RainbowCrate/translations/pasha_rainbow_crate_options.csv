@@ -1,5 +1,7 @@
 keys,en
-PASHA_RAINBOW_CRATES_ENABLED,"Enable Rainbow Crates"
-PASHA_RAINBOW_CRATES_ENABLED_TOOLTIP,"Enable Rainbow Crates. Enemies will sometimes drop Rainbow crates that let you choose which item you get from all items available in the game."
+PASHA_RAINBOW_CRATE_RAINBOW_CRATES_ENABLED,"Enable Rainbow Crates"
+PASHA_RAINBOW_CRATE_RAINBOW_CRATES_ENABLED_TOOLTIP,"Enable Rainbow Crates. Enemies will sometimes drop Rainbow crates that let you choose which item you get from all items available in the game."
 PASHA_RAINBOW_CRATE_DROP_CHANCE,"Rainbow Crate Drop Chance"
 PASHA_RAINBOW_CRATE_DROP_CHANCE_TOOLTIP,"The drop rate for rainbow crates.  At 1.0X, the drop rate will be the same as the drop rate for normal crates."
+PASHA_RAINBOW_CRATE_UNLOCKED_ITEMS_ONLY,"Unlocked Items Only"
+PASHA_RAINBOW_CRATE_UNLOCKED_ITEMS_ONLY_TOOLTIP,"If enabled, rainbow crate selections will only include unlocked items."

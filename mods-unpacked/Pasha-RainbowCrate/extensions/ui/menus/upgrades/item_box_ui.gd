@@ -12,11 +12,16 @@ onready var original_item_ui  = $MarginContainer/HBoxContainer/VBoxContainer
 var rainbow_crate_ui
 
 func _ready() -> void:
+	var rainbow_crate_options = $"/root/PashaRainbowCrateOptions"
+	
 	rainbow_crate_ui = rainbow_crate_ui_scene.instance()
 	item_ui_container.add_child(rainbow_crate_ui)
 	item_ui_container.move_child(rainbow_crate_ui,0)
 	
 	for item_data in ItemService.items:
+		if rainbow_crate_options.unlocked_items_only and not ProgressData.items_unlocked.has(item_data.my_id):
+			continue
+		
 		var item_ui = rainbow_crate_item_ui.instance()
 		rainbow_crate_ui.call_deferred("add_item_ui", item_ui)
 		item_ui.parent_box_ui = self

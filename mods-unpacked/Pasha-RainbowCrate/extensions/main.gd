@@ -12,7 +12,7 @@ func maybe_spawn_rainbow_crate(unit:Unit) -> bool:
 	if not rainbow_crate_options.rainbow_crates_enabled:
 		return false
 	
-	var luck = (Utils.get_stat("stat_luck") / 100.0) * rainbow_crate_options.rainbow_crate_drop_chance
+	var luck = (Utils.get_stat("stat_luck") / 100.0)
 	var drop_chance = min(1.0, unit.stats.base_drop_chance * (1 + luck)) 
 	
 	if RunData.current_wave > RunData.nb_of_waves:
@@ -22,9 +22,10 @@ func maybe_spawn_rainbow_crate(unit:Unit) -> bool:
 		var pos = unit.global_position
 		var consumable_to_spawn:Resource
 		var item_chance = (unit.stats.item_drop_chance * (1 + luck)) / (1 + _items_spawned_this_wave)
-		
+		item_chance = (rainbow_crate_options.rainbow_crates_drop_chance * item_chance)
+	
 		if unit.stats.always_drop_consumables and unit.stats.item_drop_chance >= 1.0 and RunData.current_wave <= RunData.nb_of_waves:
-			item_chance = (rainbow_crate_options.rainbow_crate_drop_chance / (rainbow_crate_options.rainbow_crate_drop_chance + 1.0))
+			item_chance = (rainbow_crate_options.rainbow_crates_drop_chance / (rainbow_crate_options.rainbow_crates_drop_chance + 1.0))
 		
 		if randf() <= item_chance:
 			consumable_to_spawn = rainbow_crate
