@@ -14,9 +14,13 @@ const CONFIG_FILENAME = "user://pasha-rainbowcrate-options.cfg"
 const CONFIG_SECTION = "options"
 
 func _ready():
+	if not get_node("/root/ModLoader").has_node("dami-ModOptions"):
+		return
+	
 	var mod_configs_interface = get_node("/root/ModLoader/dami-ModOptions/ModsConfigInterface")
 	
-	mod_configs_interface.connect("setting_changed", self, "setting_changed")
+	if mod_configs_interface:
+		mod_configs_interface.connect("setting_changed", self, "setting_changed")
 
 func setting_changed(key:String, value, mod) -> void:
 	if mod != MOD_NAME:
@@ -34,6 +38,9 @@ func setting_changed(key:String, value, mod) -> void:
 	save_configs()
 
 func load_configs() -> void:
+	if not get_node("/root/ModLoader").has_node("dami-ModOptions"):
+		return
+	
 	var mod_configs_interface = get_node("/root/ModLoader/dami-ModOptions/ModsConfigInterface")
 	
 	var config = ConfigFile.new()

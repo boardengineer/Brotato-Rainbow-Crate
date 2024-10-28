@@ -12,8 +12,8 @@ func maybe_spawn_rainbow_crate(unit:Unit) -> bool:
 	if not rainbow_crate_options.rainbow_crates_enabled:
 		return false
 	
-	var luck = (Utils.get_stat("stat_luck") / 100.0)
-	var drop_chance = min(1.0, unit.stats.base_drop_chance * (1 + luck)) 
+	var luck = (Utils.get_stat("stat_luck", 0) / 100.0)
+	var drop_chance = min(1.0, unit.stats.base_drop_chance * (1 + luck))
 	
 	if RunData.current_wave > RunData.nb_of_waves:
 		drop_chance /= (1.0 + RunData.get_endless_factor())

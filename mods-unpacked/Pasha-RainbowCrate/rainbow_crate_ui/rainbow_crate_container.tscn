@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://resources/fonts/actual/base/font_menus.tres" type="DynamicFont" id=1]
 [ext_resource path="res://mods-unpacked/Pasha-RainbowCrate/rainbow_crate_ui/rainbow_crate_container.gd" type="Script" id=2]
-[ext_resource path="res://resources/fonts/actual/base/font_big_title.tres" type="DynamicFont" id=5]
+[ext_resource path="res://resources/fonts/actual/base/font_menus.tres" type="DynamicFont" id=5]
 
 [node name="RainbowCrateContainer" type="VBoxContainer"]
 margin_right = 1126.0
@@ -36,7 +35,6 @@ alignment = 1
 
 [node name="TitleCanvas" type="CanvasLayer" parent="Container/VBoxContainer/HBoxContainer"]
 layer = 50
-visible = false
 
 [node name="TitleBar" type="Label" parent="Container/VBoxContainer/HBoxContainer/TitleCanvas"]
 margin_left = 322.0
@@ -47,6 +45,7 @@ size_flags_vertical = 1
 custom_fonts/font = ExtResource( 5 )
 text = "Select any Item!"
 align = 1
+valign = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Container/VBoxContainer/HBoxContainer/TitleCanvas"]
 margin_left = 335.0
@@ -62,7 +61,7 @@ margin_right = 1150.0
 margin_bottom = 297.0
 rect_min_size = Vector2( 300, 100 )
 focus_mode = 1
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 5 )
 text = "Search Name"
 override_selected_font_color = true
 minimap_width = 200

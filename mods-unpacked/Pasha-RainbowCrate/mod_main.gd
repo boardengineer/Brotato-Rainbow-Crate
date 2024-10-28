@@ -4,14 +4,14 @@ const MOD_DIR = "Pasha-RainbowCrate/"
 
 var options_node_script = load("res://mods-unpacked/Pasha-RainbowCrate/rainbow_crate_options.gd")
 
-func _init(_modLoader = ModLoader):
+func _init():
 	var dir = ModLoaderMod.get_unpacked_dir() + MOD_DIR
 	var ext_dir = dir + "extensions/"
 	var trans_dir = dir + "translations/"
 	
 	ModLoaderMod.install_script_extension(ext_dir + "main.gd")
 	ModLoaderMod.install_script_extension(ext_dir + "singletons/item_service.gd")
-	ModLoaderMod.install_script_extension(ext_dir + "ui/menus/upgrades/item_box_ui.gd")
+	ModLoaderMod.install_script_extension(ext_dir + "ui/menus/ingame/upgrades_ui_player_container.gd")
 	
 	ModLoaderMod.add_translation(trans_dir + "pasha_rainbow_crate_options.en.translation")
 

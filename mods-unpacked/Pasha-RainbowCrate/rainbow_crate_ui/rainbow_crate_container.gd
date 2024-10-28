@@ -7,9 +7,11 @@ onready var title_canvas = $Container/VBoxContainer/HBoxContainer/TitleCanvas
 
 onready var items_to_iterate := []
 
+
 func add_item_ui(item_ui):
 	item_container.add_child(item_ui)
 	items_to_iterate.push_back(item_ui)
+
 
 func _on_search_text_changed():
 	var search_text = search_text_box.text.to_lower()
