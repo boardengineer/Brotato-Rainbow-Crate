@@ -36,7 +36,7 @@ func maybe_spawn_rainbow_crate(unit:Unit) -> bool:
 			consumable_to_spawn = rainbow_crate
 		
 			var dist = rand_range(50, 100 + unit.stats.gold_spread)
-			var consumable:Consumable = _consumable_pool.pop_back()
+			var consumable:Consumable = get_node_from_pool(consumable_scene.resource_path)
 			if consumable == null:
 				consumable = consumable_scene.instance()
 				_consumables_container.call_deferred("add_child", consumable)
