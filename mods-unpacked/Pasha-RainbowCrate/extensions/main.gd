@@ -2,9 +2,15 @@ extends "res://main.gd"
 
 onready var rainbow_crate = load("res://mods-unpacked/Pasha-RainbowCrate/rainbow_crate_data.tres")
 
+
+func _ready() -> void:
+	$UI/UpgradesUI/MarginContainer/VBoxContainer/HBoxContainer2/UpgradesUIPlayerContainer1.call_deferred("prep_rainbow_crate_options")
+
+
 func spawn_consumables(unit:Unit) -> void:
 	if not maybe_spawn_rainbow_crate(unit):
 		.spawn_consumables(unit)
+
 
 func maybe_spawn_rainbow_crate(unit:Unit) -> bool:
 	var rainbow_crate_options = $"/root/PashaRainbowCrateOptions"

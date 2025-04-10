@@ -1,7 +1,7 @@
 {
 	"name": "RainbowCrate",
 	"namespace": "Pasha",
-	"version_number": "1.0.2",
+	"version_number": "1.0.3",
 	"description": "Adds 'Rainbow Crate' Consumables that let you choose which item you receive as a reward.",
 	"website_url": "",
 	"dependencies": [],

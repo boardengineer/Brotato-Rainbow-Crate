@@ -7,7 +7,8 @@ onready var rainbow_crate_item_ui = load("res://mods-unpacked/Pasha-RainbowCrate
 
 var rainbow_crate_ui
 
-func _ready() -> void:
+
+func prep_rainbow_crate_options() -> void:
 	var rainbow_crate_options = $"/root/PashaRainbowCrateOptions"
 	
 	rainbow_crate_ui = rainbow_crate_ui_scene.instance()
