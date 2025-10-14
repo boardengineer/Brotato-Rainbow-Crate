@@ -39,8 +39,8 @@ layer = 50
 [node name="TitleBar" type="Label" parent="Container/VBoxContainer/HBoxContainer/TitleCanvas"]
 margin_left = 322.0
 margin_top = 195.0
-margin_right = 802.0
-margin_bottom = 295.0
+margin_right = 1122.0
+margin_bottom = 240.0
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 5 )
 text = "Select any Item!"
