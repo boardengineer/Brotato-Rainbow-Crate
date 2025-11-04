@@ -51,8 +51,8 @@ func maybe_spawn_rainbow_crate(unit:Unit) -> bool:
 			
 			consumable.consumable_data = consumable_to_spawn
 			consumable.global_position = pos
+			consumable.already_picked_up = false
 			consumable.set_texture(consumable_to_spawn.icon)
-			var _error = consumable.connect("picked_up", self, "on_consumable_picked_up")
 			consumable.push_back_destination = Vector2(rand_range(pos.x - dist, pos.x + dist), rand_range(pos.y - dist, pos.y + dist))
 			consumable.drop(pos, 0, consumable.push_back_destination)
 			_consumables.push_back(consumable)
