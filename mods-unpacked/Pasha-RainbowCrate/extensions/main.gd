@@ -21,7 +21,7 @@ func maybe_spawn_rainbow_crate(unit:Unit) -> bool:
 	var luck: = 0.0
 
 	for player_index in RunData.get_player_count():
-		luck += Utils.get_stat("stat_luck", player_index) / 100.0
+		luck += Utils.get_stat(Keys.stat_luck_hash, player_index) / 100.0
 	
 	var drop_chance = min(1.0, unit.stats.base_drop_chance * (1 + luck))
 	
@@ -42,7 +42,7 @@ func maybe_spawn_rainbow_crate(unit:Unit) -> bool:
 			consumable_to_spawn = rainbow_crate
 		
 			var dist = rand_range(50, 100 + unit.stats.gold_spread)
-			var consumable:Consumable = get_node_from_pool(consumable_scene.resource_path)
+			var consumable:Consumable = get_node_from_pool(_consumable_pool_id, _consumables_container)
 			if consumable == null:
 				consumable = consumable_scene.instance()
 				_consumables_container.call_deferred("add_child", consumable)

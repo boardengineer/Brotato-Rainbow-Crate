@@ -16,7 +16,7 @@ func prep_rainbow_crate_options() -> void:
 	move_child(rainbow_crate_ui,0)
 	
 	for item_data in ItemService.items:
-		if rainbow_crate_options.unlocked_items_only and not ProgressData.items_unlocked.has(item_data.my_id):
+		if rainbow_crate_options.unlocked_items_only and not ProgressData.items_unlocked.has(item_data.my_id_hash):
 			continue
 		
 		_add_item_to_container(item_data)
