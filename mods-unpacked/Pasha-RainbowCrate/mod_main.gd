@@ -10,7 +10,6 @@ func _init():
 	var trans_dir = dir + "translations/"
 	
 	ModLoaderMod.install_script_extension(ext_dir + "main.gd")
-	ModLoaderMod.install_script_extension(ext_dir + "singletons/item_service.gd")
 	ModLoaderMod.install_script_extension(ext_dir + "ui/menus/ingame/upgrades_ui_player_container.gd")
 	
 	ModLoaderMod.add_translation(trans_dir + "pasha_rainbow_crate_options.en.translation")

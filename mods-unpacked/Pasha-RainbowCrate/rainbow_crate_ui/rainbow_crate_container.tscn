@@ -1,87 +1,154 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://mods-unpacked/Pasha-RainbowCrate/rainbow_crate_ui/rainbow_crate_container.gd" type="Script" id=2]
+[ext_resource path="res://ui/menus/global/my_menu_button.gd" type="Script" id=3]
 [ext_resource path="res://resources/fonts/actual/base/font_menus.tres" type="DynamicFont" id=5]
 
 [node name="RainbowCrateContainer" type="VBoxContainer"]
 margin_right = 1126.0
-margin_bottom = 1000.0
+margin_bottom = 780.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 12
 script = ExtResource( 2 )
 
-[node name="TopHorizontalWhiteSpace" type="HBoxContainer" parent="."]
+[node name="Header" type="HBoxContainer" parent="."]
 margin_right = 1126.0
-margin_bottom = 300.0
-rect_min_size = Vector2( 0, 300 )
-
-[node name="Container" type="HBoxContainer" parent="."]
-margin_top = 304.0
-margin_right = 1126.0
-margin_bottom = 1113.0
-rect_min_size = Vector2( 0, 200 )
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Container"]
-margin_right = 100.0
-margin_bottom = 809.0
-rect_min_size = Vector2( 100, 0 )
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Container"]
-margin_left = 104.0
-margin_right = 1126.0
-margin_bottom = 809.0
-size_flags_horizontal = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Container/VBoxContainer"]
-margin_right = 1022.0
-margin_bottom = 100.0
-custom_constants/separation = 24
+margin_bottom = 60.0
+custom_constants/separation = 16
 alignment = 1
 
-[node name="TitleBar" type="Label" parent="Container/VBoxContainer/HBoxContainer"]
-margin_left = 61.0
-margin_right = 383.0
-margin_bottom = 100.0
+[node name="TitleBar" type="Label" parent="Header"]
+visible = false
+margin_right = 322.0
+margin_bottom = 60.0
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 5 )
 text = "Select any Item!"
 align = 1
 valign = 1
 
-[node name="SearchText" type="TextEdit" parent="Container/VBoxContainer/HBoxContainer"]
-margin_left = 407.0
-margin_right = 709.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 302, 100 )
-focus_mode = 1
-custom_fonts/font = ExtResource( 5 )
-text = "Search Name"
-override_selected_font_color = true
-minimap_width = 200
+[node name="SearchText" type="LineEdit" parent="Header"]
+margin_left = 338.0
+margin_right = 598.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 180, 0 )
+size_flags_horizontal = 3
+clear_button_enabled = true
+placeholder_text = "Search"
+caret_blink = true
 
-[node name="CursedButton" type="CheckButton" parent="Container/VBoxContainer/HBoxContainer"]
-margin_left = 733.0
-margin_right = 961.0
-margin_bottom = 100.0
-custom_fonts/font = ExtResource( 5 )
-text = "Cursed"
+[node name="RandomButton" type="Button" parent="Header"]
+margin_left = 614.0
+margin_right = 714.0
+margin_bottom = 60.0
+text = "Random"
+script = ExtResource( 3 )
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Container/VBoxContainer"]
-margin_top = 104.0
-margin_right = 800.0
-margin_bottom = 809.0
-rect_min_size = Vector2( 800, 705 )
-size_flags_horizontal = 0
-size_flags_vertical = 0
-scroll_horizontal_enabled = false
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Container/VBoxContainer/ScrollContainer"]
-margin_bottom = 705.0
-
-[node name="ItemContainer" type="GridContainer" parent="Container/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_bottom = 705.0
-rect_min_size = Vector2( 0, 705 )
-size_flags_horizontal = 2
+[node name="Toggles" type="GridContainer" parent="."]
+margin_top = 72.0
+margin_right = 1126.0
+margin_bottom = 112.0
+size_flags_horizontal = 4
+custom_constants/vseparation = 4
+custom_constants/hseparation = 16
 columns = 3
 
-[connection signal="focus_entered" from="Container/VBoxContainer/HBoxContainer/SearchText" to="." method="_on_SearchText_focus_entered"]
-[connection signal="text_changed" from="Container/VBoxContainer/HBoxContainer/SearchText" to="." method="_on_search_text_changed"]
-[connection signal="toggled" from="Container/VBoxContainer/HBoxContainer/CursedButton" to="." method="_on_CheckButton_toggled"]
+[node name="CursedButton" type="CheckButton" parent="Toggles"]
+margin_right = 150.0
+margin_bottom = 40.0
+text = "Cursed"
+
+[node name="MutantButton" type="CheckButton" parent="Toggles"]
+margin_left = 166.0
+margin_right = 316.0
+margin_bottom = 40.0
+text = "Mutated"
+
+[node name="MecaButton" type="CheckButton" parent="Toggles"]
+margin_left = 332.0
+margin_right = 482.0
+margin_bottom = 40.0
+text = "Mecha"
+
+[node name="Tiers" type="GridContainer" parent="."]
+margin_top = 124.0
+margin_right = 1126.0
+margin_bottom = 164.0
+size_flags_horizontal = 4
+custom_constants/vseparation = 4
+custom_constants/hseparation = 12
+columns = 5
+
+[node name="AllButton" type="Button" parent="Tiers"]
+margin_right = 120.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 120, 40 )
+toggle_mode = true
+pressed = true
+text = "All"
+
+[node name="Tier0Button" type="Button" parent="Tiers"]
+margin_left = 132.0
+margin_right = 252.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 120, 40 )
+toggle_mode = true
+text = "Common"
+
+[node name="Tier1Button" type="Button" parent="Tiers"]
+margin_left = 264.0
+margin_right = 384.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 120, 40 )
+toggle_mode = true
+text = "Uncommon"
+
+[node name="Tier2Button" type="Button" parent="Tiers"]
+margin_left = 396.0
+margin_right = 516.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 120, 40 )
+toggle_mode = true
+text = "Rare"
+
+[node name="Tier3Button" type="Button" parent="Tiers"]
+margin_left = 528.0
+margin_right = 648.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 120, 40 )
+toggle_mode = true
+text = "Legendary"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_top = 176.0
+margin_right = 1126.0
+margin_bottom = 780.0
+rect_min_size = Vector2( 0, 400 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 1126.0
+margin_bottom = 656.0
+size_flags_horizontal = 3
+custom_constants/separation = 16
+
+[node name="ItemContainer" type="GridContainer" parent="ScrollContainer/VBoxContainer"]
+margin_right = 1126.0
+size_flags_horizontal = 3
+custom_constants/vseparation = 16
+custom_constants/hseparation = 16
+columns = 1
+
+[node name="MoreButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+margin_top = 16.0
+margin_right = 1126.0
+margin_bottom = 56.0
+size_flags_horizontal = 4
+text = "Show more"
+script = ExtResource( 3 )
+
+[connection signal="text_changed" from="Header/SearchText" to="." method="_on_SearchText_text_changed"]
+[connection signal="pressed" from="Header/RandomButton" to="." method="_on_RandomButton_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/MoreButton" to="." method="_on_MoreButton_pressed"]

@@ -1,7 +1,7 @@
 {
 	"name": "RainbowCrate",
 	"namespace": "Pasha",
-	"version_number": "1.0.6",
+	"version_number": "1.1.0",
 	"description": "Adds 'Rainbow Crate' Consumables that let you choose which item you receive as a reward.",
 	"website_url": "",
 	"dependencies": [],
@@ -10,7 +10,7 @@
 			"incompatibilities": [],
 			"authors": ["Pasha"],
 			"compatible_mod_loader_version": ["6.0.0"],
-			"compatible_game_version": ["0.8.0.3"],
+			"compatible_game_version": ["1.2.0.2"],
 			"config_schema": {
 				"title": "Rainbow Crate Settings",
 				"description": "Config for Rainbow Crate",
